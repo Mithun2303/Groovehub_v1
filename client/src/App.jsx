@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AddFile } from './AddFile';
+import { AddSong } from "./AddSong";
+import { AddArtist } from "./AddArtist";
+import { AddAlbum } from "./AddAlbum";
+import { AddGenre } from "./AddGenre";
+import { Player } from "./player";
 function App() {
-
   return (
     // <div>
     //   Hello World
     // </div>
     <Router>
       <Routes>
-        <Route path='/' element={<AddFile/>}/>
+        <Route path="/addsong" element={<AddSong />} />
+        <Route path="/player" element={<Player />} />
+        <Route path="/addartist" element={<AddArtist />} />
+        <Route path="/addalbum" element={<AddAlbum />} />
+        <Route path="/addgenre" element={<AddGenre />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

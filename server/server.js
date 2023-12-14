@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./psql");
-const song = require("./src/v1/songs");
+const song = require("./src/v1/populate_db");
 
 app.use(cors());
 
