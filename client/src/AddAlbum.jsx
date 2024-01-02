@@ -9,6 +9,7 @@ export const AddAlbum = () => {
   const [artistName, setArtistName] = useState(null);
   const [description, setDescription] = useState(null);
   const [file, setFile] = useState(null);
+  const [message, setMessage] = useState(null);
   const [profileUrl, setProfileUrl] = useState(null);
   //   useEffect(() => {
   //     if (file != null) {
@@ -47,6 +48,8 @@ export const AddAlbum = () => {
         // Use the download URL
         console.log(downloadURL);
         setProfileUrl(downloadURL);
+        setMessage("Got URL");
+        
 
         // If you want to upload the file, uncomment the following lines:
         // await uploadBytes(imageRef, file);
@@ -118,7 +121,7 @@ export const AddAlbum = () => {
             onClick={(e) => handleFileAdd()}
             className="w-[25%] border-black border-4 p-5 rounded-2xl"
           >
-            Add file
+            {message===null?"Add file":message}
           </button>
         </div>
         <div className="flex justify-evenly">

@@ -86,22 +86,23 @@ class PopulateDB {
     const artistId = artist_res.rows[0].artistid;
     const genreId = genre_res.rows[0].genreid;
     const songId = uid(16);
-    const song_res = db.query(
+    const song_res = await db.query(
       `insert into songdimension(songid,songname,songloc,albumid) values($1,$2,$3,$4) RETURNING *`,
       [songId, req.songName, req.songLoc, albumId]
     );
-    const artist_song_res = db.query(
+    const artist_song_res = await db.query(
       "insert into artistsongdimension(songid,artistid) values($1,$2) RETURNING *",
       [songId, artistId]
     );
 
-    const genre_song_res = db.query(
+    const genre_song_res = await db.query(
       'insert into songgenredimension(songid,genreid) values($1,$2) RETURNING *',
       [songId,genreId]
     );
 
     return genre_song_res;
     // if(artist_res.rowCount===0){
+      
     //   let artist_result = await this.addArtist({ artistName: req.artistName });
     //   artistId = res.rows[0].artistId;
     // }

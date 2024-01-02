@@ -1,3 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=IBM+Plex+Serif:wght@700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+body{
+  font-family: 'Allerta Stencil', sans-serif;
+  background: #090019;
+}
+.player{
+  font-family: 'Allerta Stencil', sans-serif;
+}
+.custom-appearance input[type="range"]::-moz-range-thumb {
+  /* outline: none; Your desired -webkit-appearance value */
+  -moz-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+input[type="range"]::-moz-range-progress:hover {
+  /* outline: none; Your desired -webkit-appearance value */
+  -moz-appearance: none;
+    width: 5px;
+    height: 5px;
+}
+input[type="range"]::-moz-range-thumb:hover {
+  /* outline: none; Your desired -webkit-appearance value */
+  -moz-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+}
+.custom-appearance input[type="range"]::-moz-range-progress {
+  /* outline: none; Your desired -webkit-appearance value */
+  
+  background-color: #6d3dcc rgb(40,40,40);
+
+
+}
+
+input[type = "range"]::-moz-range-thumb {
+    /* -moz-appearance: none; */
+    width: 0;
+    height: 0;
+}
+/* ::-webkit-slider-runnable-track{
+  background-color: rgb(233,68,67);
+  width: 2px;
+  height: 2px;
+  position: relative;
+  top: -0.75vh;
+} */
+.custom-appearance input[type = "range"]::-webkit-slider-runnable-track
+{
+  -webkit-appearance: none;
+  /* background-color: linear-gradient(to right, rgb(233,68,67) 0%, rgb(233,68,67) 50%, red 50%, red 100%); */
+  overflow: visible;
+  /* -moz-appearance: none; */
+  width: 2px;
+  top: -0.75vh;
+  position: relative;
+  height: 2px;
+}
+
+.custom-appearance input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+input[type="text"]{
+  outline: none;
+  /* border: 2px;
+  border-color: rgb(233,68,67); */
+}
+input[type="email"]{
+  outline: none;
+  /* border: 2px;
+  border-color: rgb(233,68,67); */
+}
+
+
+input[type = "range"]::-moz-range-progress{
+  background-color: #6d3dcc;
+}
+
+.scrollbar{
+  /* background-color: rgb(233,68,67); */
+  scrollbar-color: #6d3dcc rgb(40,40,40);
+  scrollbar-width:thin;
+}
+.form-dark{
+    box-shadow: 10px 10px 10px 0px #000; 
+}
+.form{
+    box-shadow: 10px 10px 10px 0px #fff; 
+    
+}
+@keyframes slideInTop {
+  0% {
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+.logo-loader {
+  animation: slideInTop 1s linear infinite;
+}
+
+.scrollbar{
+  overflow: hidden;
+  scrollbar-color: rgb(233,68,67) rgb(40,40,40);
+  scrollbar-width:thin;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  color: #000;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #6d3dcc;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}

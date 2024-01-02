@@ -14,6 +14,7 @@ export const AddSong = () => {
     if (file != null) {
       console.log(file);
       const imageRef = ref(storage, `songs/${file.name}`);
+    //   console.log(imageRef);
       await uploadBytes(imageRef, file).then((response) => {
         console.log(response);
       });
@@ -82,19 +83,16 @@ export const AddSong = () => {
             name=""
             id=""
             onChange={(e) => setFile(e.target.files[0])}
-            className="border-4 border-black w-[50%] p-4 rounded-2xl"
+            className="border-4 border-black w-[75%] p-4 rounded-2xl"
             placeholder="Song Loc"
           />
           <button
             onClick={(e) => handleFileAdd()}
             className="w-[25%] border-black border-4 p-4 rounded-2xl"
           >
-            Add file
+            {message===null?"Add file":message}
           </button>
-          <span className="p-4 w-[25%]">
-            {/* hello */}
-            {message===null?null:message}
-          </span>
+
         </div>
         <div className="flex justify-evenly">
           <button
